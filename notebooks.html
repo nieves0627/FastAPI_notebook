@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FastAPI documentation &#8212; FastAPI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="FastAPI - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="FastAPI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">FastAPI documentation</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FastAPI documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FastAPI documentation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps">First steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path">Path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-path-operation-decorator">Define a <em>path operation decorator</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap"><strong>Recap</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#path-parameters"><strong>Path Parameters</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path-parameters-with-types"><strong>Path parameters with types</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-conversion"><strong>Data conversion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-validation"><strong>Data validation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation"><strong>Documentation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pydantic"><strong>Pydantic</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-matters"><strong>Order matters</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predefined-values-with-enum"><strong>Predefined values with Enum</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path-parameters-containing-paths"><strong>Path parameters containing paths</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-convertor"><strong>Path convertor</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Recap</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameters">Query Parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defaults"><strong>Defaults</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters"><strong>Optional parameters</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameter-type-conversion"><strong>Query parameter type conversion</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fastapi-documentation">
+<h1>FastAPI documentation<a class="headerlink" href="#fastapi-documentation" title="Link to this heading">#</a></h1>
+<p>Created by: juliana alejandra gutierrez castro
+Created time: September 27, 2024 5:12 PM</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="basic-usage">
+<h1>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h1>
+<section id="first-steps">
+<h2>First steps<a class="headerlink" href="#first-steps" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>import <code class="docutils literal notranslate"><span class="pre">FastAPI</span></code>:</strong> from fastapi import FastAPI</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;fastapi&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">FastAPI</span></code> is a Python class that provides all the functionality for your API.</p>
+<aside>
+<p><code class="docutils literal notranslate"><span class="pre">FastAPI</span></code> is a class that inherits directly from <code class="docutils literal notranslate"><span class="pre">Starlette</span></code>.</p>
+<p>You can use all the <a class="reference external" href="https://www.starlette.io/">Starlette</a> functionality with <code class="docutils literal notranslate"><span class="pre">FastAPI</span></code> too.</p>
+</aside>
+<ol class="arabic simple" start="2">
+<li><p><strong>create a <code class="docutils literal notranslate"><span class="pre">FastAPI</span></code> “instance”:</strong> app = FastAPI()</p></li>
+</ol>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">app</span></code> variable will be an “instance” of the class <code class="docutils literal notranslate"><span class="pre">FastAPI</span></code>.</p>
+<p>This will be the main point of interaction to create all your API.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>create a <em>path operation:</em></strong> &#64;app.get(“/”)</p></li>
+</ol>
+</section>
+<section id="path">
+<h2>Path<a class="headerlink" href="#path" title="Link to this heading">#</a></h2>
+<p>“Path” here refers to the last part of the URL starting from the first <code class="docutils literal notranslate"><span class="pre">/</span></code> after https://.</p>
+<p>So, in a URL like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">items</span><span class="o">/</span><span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>…the path would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">items</span><span class="o">/</span><span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside>
+<p>A “path” is also commonly called an “endpoint” or a “route”.</p>
+</aside>
+<p>When building APIs, you normally use these specific HTTP methods to perform a specific action.</p>
+<p>Normally you use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span></code>: to create data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>: to read data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span></code>: to update data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: to delete data.</p></li>
+</ul>
+<p>So, in OpenAPI, each of the HTTP methods is called an “operation”.</p>
+<p>We are going to call them “<strong>operations</strong>” too.</p>
+</section>
+<section id="define-a-path-operation-decorator">
+<h2>Define a <em>path operation decorator</em><a class="headerlink" href="#define-a-path-operation-decorator" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;app.get(&quot;/&quot;)</span></code> tells <strong>FastAPI</strong> that the function right below is in charge of handling requests that go to:</p>
+<ul class="simple">
+<li><p>the path <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>using a <code class="docutils literal notranslate"><span class="pre">get</span></code> operation</p></li>
+</ul>
+<aside>
+<p>That <code class="docutils literal notranslate"><span class="pre">&#64;something</span></code> syntax in Python is called a “decorator”.</p>
+<p>You put it on top of a function. Like a pretty decorative hat (I guess that’s where the term came from).</p>
+<p>A “decorator” takes the function below and does something with it.</p>
+<p>In our case, this decorator tells <strong>FastAPI</strong> that the function below corresponds to the <strong>path</strong> <code class="docutils literal notranslate"><span class="pre">/</span></code> with an <strong>operation</strong> <code class="docutils literal notranslate"><span class="pre">get</span></code>.</p>
+<p>It is the “<strong>path operation decorator</strong>”.</p>
+</aside>
+<ol class="arabic">
+<li><p><strong>define the path operation function:</strong> <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span> <span class="pre">root():</span></code></p>
+<p>This is our “<strong>path operation function</strong>”:</p>
+<ul class="simple">
+<li><p><strong>path</strong>: is <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
+<li><p><strong>operation</strong>: is <code class="docutils literal notranslate"><span class="pre">get</span></code>.</p></li>
+<li><p><strong>function</strong>: is the function below the “decorator” (below <code class="docutils literal notranslate"><span class="pre">&#64;app.get(&quot;/&quot;)</span></code>).</p></li>
+</ul>
+<p>This is a Python function.</p>
+<p>It will be called by <strong>FastAPI</strong> whenever it receives a request to the URL “<code class="docutils literal notranslate"><span class="pre">/</span></code>” using a <code class="docutils literal notranslate"><span class="pre">GET</span></code> operation.</p>
+<p>In this case, it is an <code class="docutils literal notranslate"><span class="pre">async</span></code> function.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside>
+<p>You could also define it as a normal function instead of <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code></p>
+</aside>
+<ol class="arabic simple" start="2">
+<li><p><strong>return the content</strong></p></li>
+</ol>
+<p>You can return a <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, singular values as <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, etc.</p>
+<p>You can also return Pydantic models (you’ll see more about that later).</p>
+</section>
+<section id="recap">
+<h2><strong>Recap</strong><a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Import <code class="docutils literal notranslate"><span class="pre">FastAPI</span></code>.</p></li>
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">app</span></code> instance.</p></li>
+<li><p>Write a <strong>path operation decorator</strong> using decorators like <code class="docutils literal notranslate"><span class="pre">&#64;app.get(&quot;/&quot;)</span></code>.</p></li>
+<li><p>Define a <strong>path operation function</strong>; for example, <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">root():</span> <span class="pre">...</span></code>.</p></li>
+<li><p>Run the development server using the command <code class="docutils literal notranslate"><span class="pre">fastapi</span> <span class="pre">dev</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="path-parameters">
+<h1><strong>Path Parameters</strong><a class="headerlink" href="#path-parameters" title="Link to this heading">#</a></h1>
+<p>You can declare path “parameters” or “variables” with the same syntax used by Python format strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items/</span><span class="si">{item_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_item</span><span class="p">(</span><span class="n">item_id</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span> <span class="n">item_id</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>The value of the path parameter <code class="docutils literal notranslate"><span class="pre">item_id</span></code> will be passed to your function as the argument <code class="docutils literal notranslate"><span class="pre">item_id</span></code>.</strong></p>
+<p>So, if you run this example and go to <a class="reference external" href="http://127.0.0.1:8000/items/foo">http://127.0.0.1:8000/items/foo</a>, you will see a response of:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span><span class="s2">&quot;foo&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="path-parameters-with-types">
+<h2><strong>Path parameters with types</strong><a class="headerlink" href="#path-parameters-with-types" title="Link to this heading">#</a></h2>
+<p>You can declare the type of a path parameter in the function, using standard Python type annotations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items/</span><span class="si">{item_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_item</span><span class="p">(</span><span class="n">item_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span> <span class="n">item_id</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">item_id</span></code> is declared to be an <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<aside>
+<p>This will give you editor support inside of your function, with error checks, completion, etc.</p>
+</aside>
+</section>
+<section id="data-conversion">
+<h2><strong>Data conversion</strong><a class="headerlink" href="#data-conversion" title="Link to this heading">#</a></h2>
+<p>If you run this example and open your browser at <a class="reference external" href="http://127.0.0.1:8000/items/3">http://127.0.0.1:8000/items/3</a>, you will see a response of:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside>
+<p>Notice that the value your function received (and returned) is <code class="docutils literal notranslate"><span class="pre">3</span></code>, as a Python <code class="docutils literal notranslate"><span class="pre">int</span></code>, not a string <code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code>.</p>
+<p>So, with that type declaration, <strong>FastAPI</strong> gives you automatic request “parsing”.</p>
+</aside>
+</section>
+<section id="data-validation">
+<h2><strong>Data validation</strong><a class="headerlink" href="#data-validation" title="Link to this heading">#</a></h2>
+<p>But if you go to the browser at <a class="reference external" href="http://127.0.0.1:8000/items/foo">http://127.0.0.1:8000/items/foo</a>, you will see a nice HTTP error of:</p>
+<p><img alt="image.png" src="_images/image.png" /></p>
+<p>because the path parameter <code class="docutils literal notranslate"><span class="pre">item_id</span></code> had a value of <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code>, which is not an <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>The same error would appear if you provided a <code class="docutils literal notranslate"><span class="pre">float</span></code> instead of an <code class="docutils literal notranslate"><span class="pre">int</span></code>, as in: <a class="reference external" href="http://127.0.0.1:8000/items/4.2">http://127.0.0.1:8000/items/4.2</a></p>
+<aside>
+<p>So, with the same Python type declaration, <strong>FastAPI</strong> gives you data validation.</p>
+<p>Notice that the error also clearly states exactly the point where the validation didn’t pass.</p>
+<p>This is incredibly helpful while developing and debugging code that interacts with your API.</p>
+</aside>
+</section>
+<section id="documentation">
+<h2><strong>Documentation</strong><a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>And when you open your browser at <a class="reference external" href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a>, you will see an automatic, interactive, API documentation like:</p>
+<p><img alt="image01.png" src="_images/image01.png" /></p>
+</section>
+<section id="pydantic">
+<h2><strong>Pydantic</strong><a class="headerlink" href="#pydantic" title="Link to this heading">#</a></h2>
+<p>All the data validation is performed under the hood by <a class="reference external" href="https://docs.pydantic.dev/">Pydantic</a>, so you get all the benefits from it. And you know you are in good hands.</p>
+<p>You can use the same type declarations with <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> and many other complex data types.</p>
+</section>
+<section id="order-matters">
+<h2><strong>Order matters</strong><a class="headerlink" href="#order-matters" title="Link to this heading">#</a></h2>
+<p>When creating <em>path operations</em>, you can find situations where you have a fixed path.</p>
+<p>Like <code class="docutils literal notranslate"><span class="pre">/users/me</span></code>, let’s say that it’s to get data about the current user.</p>
+<p>And then you can also have a path <code class="docutils literal notranslate"><span class="pre">/users/{user_id}</span></code> to get data about a specific user by some user ID.</p>
+<p>Because <em>path operations</em> are evaluated in order, you need to make sure that the path for <code class="docutils literal notranslate"><span class="pre">/users/me</span></code> is declared before the one for <code class="docutils literal notranslate"><span class="pre">/users/{user_id}</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/users/me&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_user_me</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;the current user&quot;</span><span class="p">}</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/users/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otherwise, the path for <code class="docutils literal notranslate"><span class="pre">/users/{user_id}</span></code> would match also for <code class="docutils literal notranslate"><span class="pre">/users/me</span></code>, “thinking” that it’s receiving a parameter <code class="docutils literal notranslate"><span class="pre">user_id</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">&quot;me&quot;</span></code>.</p>
+<p><strong>For example:</strong> The following code is ordered with the function ‚Äú<em>read_user_me()</em>‚Äù as the first call and ‚Äú<em>read_use</em>r()‚Äù as the second call.  As a result, for each time ‚Äúme‚Äù is typed as a path parameter, the server will show us the <em>‚Äúuser_id‚Äù:  ‚Äúthe current user‚Äù</em> string response.</p>
+<p><img alt="image.png" src="resources/img/image%201.png" /></p>
+<p><img alt="image.png" src="resources/img/image%202.png" /></p>
+<p><strong>Example 2</strong>: Otherwise, for every time we type ‚Äúme‚Äù as a path parameter, we will get the string ‚Äúme‚Äù as a response.</p>
+<p><img alt="image.png" src="resources/img/image%203.png" /></p>
+<p><img alt="image.png" src="resources/img/image%204.png" /></p>
+<p><strong>Similarly, you cannot redefine a path operation:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_users</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;Rick&quot;</span><span class="p">,</span> <span class="s2">&quot;Morty&quot;</span><span class="p">]</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_users2</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;Bean&quot;</span><span class="p">,</span> <span class="s2">&quot;Elfo&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first one will always be used since the path matches first</p>
+</section>
+<section id="predefined-values-with-enum">
+<h2><strong>Predefined values with Enum</strong><a class="headerlink" href="#predefined-values-with-enum" title="Link to this heading">#</a></h2>
+<p>If you have a <em>path operation</em> that receives a <em>path parameter</em>, but you want the possible valid <em>path parameter</em> values to be predefined, you can use a standard Python <code class="docutils literal notranslate"><span class="pre">Enum</span></code>.</p>
+<ol class="arabic simple">
+<li><p><strong>Create an <code class="docutils literal notranslate"><span class="pre">Enum</span></code> class</strong></p></li>
+</ol>
+<p>Import <code class="docutils literal notranslate"><span class="pre">Enum</span></code> and create a sub-class that inherits from <code class="docutils literal notranslate"><span class="pre">str</span></code> and from <code class="docutils literal notranslate"><span class="pre">Enum</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="k">class</span> <span class="nc">ModelName</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">alexnet</span> <span class="o">=</span> <span class="s2">&quot;alexnet&quot;</span>
+    <span class="n">resnet</span> <span class="o">=</span> <span class="s2">&quot;resnet&quot;</span>
+    <span class="n">lenet</span> <span class="o">=</span> <span class="s2">&quot;lenet&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside>
+<p>By inheriting from <code class="docutils literal notranslate"><span class="pre">str</span></code> the API docs will be able to know that the values must be of type <code class="docutils literal notranslate"><span class="pre">string</span></code> and will be able to render correctly.</p>
+</aside>
+<p>Then create class attributes with fixed values, which will be the available valid values.</p>
+<ol class="arabic simple">
+<li><p><strong>Declare a <em>path parameter</em></strong></p></li>
+</ol>
+<p>Then create a <em>path parameter</em> with a type annotation using the enum class you created (<code class="docutils literal notranslate"><span class="pre">ModelName</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="k">class</span> <span class="nc">ModelName</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">alexnet</span> <span class="o">=</span> <span class="s2">&quot;alexnet&quot;</span>
+    <span class="n">resnet</span> <span class="o">=</span> <span class="s2">&quot;resnet&quot;</span>
+    <span class="n">lenet</span> <span class="o">=</span> <span class="s2">&quot;lenet&quot;</span>
+    
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/models/</span><span class="si">{model_name}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="n">ModelName</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3. Compare <em>enumeration members:</em></strong></p>
+<p>You can compare it with the <em>enumeration member</em> in your created enum <code class="docutils literal notranslate"><span class="pre">ModelName</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="k">class</span> <span class="nc">ModelName</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">alexnet</span> <span class="o">=</span> <span class="s2">&quot;alexnet&quot;</span>
+    <span class="n">resnet</span> <span class="o">=</span> <span class="s2">&quot;resnet&quot;</span>
+    <span class="n">lenet</span> <span class="o">=</span> <span class="s2">&quot;lenet&quot;</span>
+    
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/models/</span><span class="si">{model_name}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="n">ModelName</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">model_name</span> <span class="ow">is</span> <span class="n">ModelName</span><span class="o">.</span><span class="n">alexnet</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Deep Learning FTW!&quot;</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">model_name</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;lenet&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;LeCNN all the images&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Get the <em>enumeration value</em></strong></p></li>
+</ol>
+<p>You can get the actual value (a <code class="docutils literal notranslate"><span class="pre">str</span></code> in this case) using <code class="docutils literal notranslate"><span class="pre">model_name.value</span></code>, or in general, <code class="docutils literal notranslate"><span class="pre">your_enum_member.value</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="k">class</span> <span class="nc">ModelName</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">alexnet</span> <span class="o">=</span> <span class="s2">&quot;alexnet&quot;</span>
+    <span class="n">resnet</span> <span class="o">=</span> <span class="s2">&quot;resnet&quot;</span>
+    <span class="n">lenet</span> <span class="o">=</span> <span class="s2">&quot;lenet&quot;</span>
+    
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/models/</span><span class="si">{model_name}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="n">ModelName</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">model_name</span> <span class="ow">is</span> <span class="n">ModelName</span><span class="o">.</span><span class="n">alexnet</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Deep Learning FTW!&quot;</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">model_name</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;lenet&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;LeCNN all the images&quot;</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Have some residuals&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside>
+<p>If you are wondering, “AlexNet”, “ResNet”, and “LeNet” are just names of Machine Learning models.</p>
+</aside>
+<ol class="arabic simple">
+<li><p><strong>Return <em>enumeration members</em></strong></p></li>
+</ol>
+<p>You can return <em>enum members</em> from your <em>path operation</em>, even nested in a JSON body (e.g. a <code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
+<p>They will be converted to their corresponding values (strings in this case) before returning them to the client:</p>
+<section id="examples">
+<h3>Examples:<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p><strong>Example 1: ____________________________________________________________________________________________</strong></p>
+<p><img alt="image.png" src="resources/img/image%205.png" /></p>
+<p><strong>Example 2:_____________________________________________________________________________________________</strong></p>
+<p><img alt="image.png" src="resources/img/image%206.png" /></p>
+<p><strong>Example 3:_____________________________________________________________________________________________</strong></p>
+<p><img alt="image.png" src="resources/img/image%207.png" /></p>
+<p><strong>Example 4 (with error):________________________________________________________________________________</strong></p>
+<p><img alt="image.png" src="resources/img/image%208.png" /></p>
+</section>
+</section>
+<section id="path-parameters-containing-paths">
+<h2><strong>Path parameters containing paths</strong><a class="headerlink" href="#path-parameters-containing-paths" title="Link to this heading">#</a></h2>
+<p>Let’s say you have a <em>path operation</em> with a path <code class="docutils literal notranslate"><span class="pre">/files/{file_path}</span></code>.</p>
+<p>But you need <code class="docutils literal notranslate"><span class="pre">file_path</span></code> itself to contain a <em>path</em>, like <code class="docutils literal notranslate"><span class="pre">home/johndoe/myfile.txt</span></code>.</p>
+<p>So, the URL for that file would be something like: <code class="docutils literal notranslate"><span class="pre">/files/home/johndoe/myfile.txt</span></code>.</p>
+<section id="path-convertor">
+<h3><strong>Path convertor</strong><a class="headerlink" href="#path-convertor" title="Link to this heading">#</a></h3>
+<p>Using an option directly from Starlette you can declare a <em>path parameter</em> containing a <em>path</em> using a URL like:</p>
+<p>In this case, the name of the parameter is <code class="docutils literal notranslate"><span class="pre">file_path</span></code>, and the last part, <code class="docutils literal notranslate"><span class="pre">:path</span></code>, tells it that the parameter should match any <em>path</em>.</p>
+<p>So, you can use it with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/files/{file_path:path}&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;file_path&quot;</span><span class="p">:</span> <span class="n">file_path</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example:</p>
+<p><img alt="image.png" src="resources/img/image%209.png" /></p>
+<p><img alt="image.png" src="resources/img/image%2010.png" /></p>
+<aside>
+<p>You could need the parameter to contain <code class="docutils literal notranslate"><span class="pre">/home/johndoe/myfile.txt</span></code>, with a leading slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
+<p>In that case, the URL would be: <code class="docutils literal notranslate"><span class="pre">/files//home/johndoe/myfile.txt</span></code>, with a double slash (<code class="docutils literal notranslate"><span class="pre">//</span></code>) between <code class="docutils literal notranslate"><span class="pre">files</span></code> and <code class="docutils literal notranslate"><span class="pre">home</span></code>.</p>
+</aside>
+</section>
+</section>
+<section id="id1">
+<h2><strong>Recap</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>With <strong>FastAPI</strong>, by using short, intuitive and standard Python type declarations, you get:</p>
+<ul>
+<li><p>Editor support: error checks, auto-completion, etc.</p></li>
+<li><p>Data “”</p>
+<p>parsing</p>
+</li>
+<li><p>Data validation</p></li>
+<li><p>API annotation and automatic documentation</p></li>
+</ul>
+<p>And you only have to declare them once.</p>
+<p>That’s probably the main visible advantage of <strong>FastAPI</strong> compared to alternative frameworks (apart from the raw performance).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="query-parameters">
+<h1>Query Parameters<a class="headerlink" href="#query-parameters" title="Link to this heading">#</a></h1>
+<p>When you declare other function parameters that are not part of the path parameters, they are automatically interpreted as “query” parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="n">fake_items_db</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;item_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Foo&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;item_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bar&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;item_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Baz&quot;</span><span class="p">}]</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items/&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_item</span><span class="p">(</span><span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">fake_items_db</span><span class="p">[</span><span class="n">skip</span> <span class="p">:</span> <span class="n">skip</span> <span class="o">+</span> <span class="n">limit</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside>
+<ul>
+<li><p>return fake_items_db[skip: skip + limit]</p>
+<p>This line returns a slice of the <code class="docutils literal notranslate"><span class="pre">fake_items_db</span></code> list. It starts at the index specified by <code class="docutils literal notranslate"><span class="pre">skip</span></code> and goes up to (but not including) the index specified by <code class="docutils literal notranslate"><span class="pre">skip</span> <span class="pre">+</span> <span class="pre">limit</span></code>.</p>
+</li>
+</ul>
+<p>In summary, this code sets up a FastAPI application with a single endpoint (“/items/”) that returns a subset of items from a fake database. The endpoint supports pagination through <code class="docutils literal notranslate"><span class="pre">skip</span></code> and <code class="docutils literal notranslate"><span class="pre">limit</span></code> query parameters</p>
+</aside>
+<p><strong>The query is the set of key-value pairs that go after the <code class="docutils literal notranslate"><span class="pre">?</span></code> in a URL, separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> characters.</strong></p>
+<p>For example, in the URL:</p>
+<p>The query parameters are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">skip</span></code>: with a value of <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">limit</span></code>: with a value of <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+</ul>
+<p>As they are part of the URL, they are “naturally” strings.</p>
+<p>But when you declare them with Python types (in the example above, as <code class="docutils literal notranslate"><span class="pre">int</span></code>), they are converted to that type and validated against it.</p>
+<p>All the same process that applied for path parameters also applies for query parameters</p>
+<p>Example 1:</p>
+<p><img alt="image.png" src="resources/img/image%2011.png" /></p>
+<p>Example 2:</p>
+<p><img alt="image.png" src="resources/img/image%2012.png" /></p>
+<p>Example 3:</p>
+<p><img alt="image.png" src="resources/img/image%2013.png" /></p>
+<section id="defaults">
+<h2><strong>Defaults</strong><a class="headerlink" href="#defaults" title="Link to this heading">#</a></h2>
+<p><strong>As query parameters are not a fixed part of a path, they can be optional and can have default values.</strong></p>
+<p>In the example above they have default values of <code class="docutils literal notranslate"><span class="pre">skip=0</span></code> and <code class="docutils literal notranslate"><span class="pre">limit=10</span></code>.</p>
+<p>So, going to the URL:</p>
+<p>would be the same as going to:</p>
+<p>But if you go to, for example:</p>
+<p>The parameter values in your function will be:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">skip=20</span></code>: because you set it in the URL</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">limit=10</span></code>: because that was the default value</p></li>
+</ul>
+</section>
+<section id="optional-parameters">
+<h2><strong>Optional parameters</strong><a class="headerlink" href="#optional-parameters" title="Link to this heading">#</a></h2>
+<p>The same way, you can declare optional query parameters, by setting their default to <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items/</span><span class="si">{item_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_item</span><span class="p">(</span><span class="n">item_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">q</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span> <span class="n">item_id</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, the function parameter <code class="docutils literal notranslate"><span class="pre">q</span></code> will be optional, and will be <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p>
+<aside>
+<p><em>Also notice that <strong>FastAPI</strong> is smart enough to notice that the path parameter <code class="docutils literal notranslate"><span class="pre">item_id</span></code> is a path parameter and <code class="docutils literal notranslate"><span class="pre">q</span></code> is not, so, it’s a query parameter.</em></p>
+</aside>
+<p>Example 1:</p>
+<p><img alt="image.png" src="resources/img/image%2014.png" /></p>
+<p>Example 2:</p>
+<p><img alt="image.png" src="resources/img/image%2015.png" /></p>
+</section>
+<section id="query-parameter-type-conversion">
+<h2><strong>Query parameter type conversion</strong><a class="headerlink" href="#query-parameter-type-conversion" title="Link to this heading">#</a></h2>
+<p>You can also declare <code class="docutils literal notranslate"><span class="pre">bool</span></code> types, and they will be converted:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items/</span><span class="si">{item_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">read_item</span><span class="p">(</span><span class="n">item_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">short</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;item_id&quot;</span><span class="p">:</span> <span class="n">item_id</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">q</span><span class="p">:</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">})</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">short</span><span class="p">:</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;This is an amazing item that has a long description&quot;</span><span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">item</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FastAPI documentation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps">First steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path">Path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-path-operation-decorator">Define a <em>path operation decorator</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap"><strong>Recap</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#path-parameters"><strong>Path Parameters</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path-parameters-with-types"><strong>Path parameters with types</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-conversion"><strong>Data conversion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-validation"><strong>Data validation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation"><strong>Documentation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pydantic"><strong>Pydantic</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-matters"><strong>Order matters</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predefined-values-with-enum"><strong>Predefined values with Enum</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path-parameters-containing-paths"><strong>Path parameters containing paths</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-convertor"><strong>Path convertor</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Recap</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameters">Query Parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defaults"><strong>Defaults</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters"><strong>Optional parameters</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameter-type-conversion"><strong>Query parameter type conversion</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juliana Alejandra Gutierrez Castr
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
